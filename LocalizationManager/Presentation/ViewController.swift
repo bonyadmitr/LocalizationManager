@@ -10,8 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    deinit {
-        print("- deinit ViewController")
+    @IBOutlet weak var someLabel: UILabel! {
+        didSet {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .full
+            formatter.timeStyle = .full
+            formatter.locale = LocalizationManager.shared.locale
+            someLabel.text = formatter.string(from: Date()) 
+        }
     }
     
     @IBAction func changeLanguageButton(_ sender: AnyObject) {
@@ -33,6 +39,11 @@ class ViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel, handler: nil)
         sheetVC.addAction(cancelAction)
         return sheetVC
+    }
+    
+    /// test of memory leak
+    deinit {
+        print("- deinit ViewController")
     }
 }
 

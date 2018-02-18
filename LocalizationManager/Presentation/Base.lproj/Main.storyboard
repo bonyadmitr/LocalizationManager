@@ -34,7 +34,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="lzPromt" value="hello"/>
                                         </userDefinedRuntimeAttributes>
                                     </searchBar>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05v-8r-Lgi">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05v-8r-Lgi">
                                         <rect key="frame" x="0.0" y="56" width="320" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -130,6 +130,9 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="lzPrompt" value="hello"/>
                         </userDefinedRuntimeAttributes>
                     </navigationItem>
+                    <connections>
+                        <outlet property="someLabel" destination="05v-8r-Lgi" id="h3U-AU-OWn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2Z-q9-NHl" sceneMemberID="firstResponder"/>
             </objects>

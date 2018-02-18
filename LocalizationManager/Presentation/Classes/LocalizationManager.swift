@@ -13,6 +13,7 @@ protocol LocalizationManagerDelegate {
 }
 
 //TODO: TEST plurals
+/// buttons with system text cannot be localized with force switch
 public final class LocalizationManager: MulticastHandler {
     
     /// MulticastHandler protocol
@@ -93,6 +94,11 @@ public final class LocalizationManager: MulticastHandler {
             let bundle = Bundle(path: path)
             else { return }
         objc_setAssociatedObject(Bundle.main, &kBundleKey, bundle, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+}
+extension LocalizationManager {
+    public var locale: Locale {
+        return Locale(identifier: currentLanguage)
     }
 }
 
